@@ -19,6 +19,16 @@ const server = app.listen(port, () =>{
 });
 
 
+mongoose.connect('mongodb://localhost:27017/dbplataforma',{ useNewUrlParser: true,useUnifiedTopology: true})
+    .then(() =>{
+        console.log("la conexion a mongodb se ha realizado correctamente"); 
+        });
+  
+       mongoose.connection.on('error' , err => {
+        console.log('DB connection error: ${err.message}');
+       }); 
+
+
 
 //API docs
 app.get('/', (req, res) =>{

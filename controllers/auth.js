@@ -4,7 +4,7 @@ const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 const _ = require('lodash');
 var expressJwt = require('express-jwt');
-const { sendEmail } = require("../helpers");
+//const { sendEmail } = require("../helpers");
 // load env
 const dotenv = require("dotenv");
 dotenv.config();

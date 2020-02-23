@@ -19,7 +19,7 @@ const server = app.listen(port, () =>{
 });
 
 
-mongoose.connect('mongodb://localhost:27017/dbplataforma',{ useNewUrlParser: true,useUnifiedTopology: true})
+mongoose.connect('mongodb://159.89.54.208/dbplataforma',{ useNewUrlParser: true,useUnifiedTopology: true})
     .then(() =>{
         console.log("la conexion a mongodb se ha realizado correctamente"); 
         });
@@ -28,6 +28,9 @@ mongoose.connect('mongodb://localhost:27017/dbplataforma',{ useNewUrlParser: tru
         console.log('DB connection error: ${err.message}');
        }); 
 
+
+//configuracion de las rutas
+const authRoutes = require('./routes/auth');
 
 
 //API docs
@@ -55,6 +58,10 @@ app.use((req, res, next) => {
 app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(cookieParser());
+
+//cargar rutas
+app.use("/", authRoutes);
+
 
 
 app.use(function(err,req,res,next){

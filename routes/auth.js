@@ -3,7 +3,7 @@
 const express = require('express');
 const authController = require('../controllers/auth');
 const userController = require('../controllers/user');
-const validator = require('../validator')
+const validator = require('../validations')
 //const {passwordResetValidator} = require ("../validator");
 
 const router = express.Router();

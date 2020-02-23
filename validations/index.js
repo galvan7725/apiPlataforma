@@ -34,7 +34,7 @@ next();
 
 exports.userSingupValidator = (req, res, next) => {
     var params = req.body;
-    console.log(params);
+    console.log("params:",params);
     if(!params.name  || !params.email || !params.password){
         console.log("Parametros vacios");
         

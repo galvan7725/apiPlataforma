@@ -56,9 +56,9 @@ var controller = {
             //persist the token with expiry date
             res.cookie("t",token,{expire: new Date() + 9999});
             //return response with user an token 
-            const {_id, name, email} = user;
+            const {_id, name, email,role} = user;
             return res.json({token,
-                user: {_id, name, email}
+                user: {_id, name, email, role}
             });
         });
 
